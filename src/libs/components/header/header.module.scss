@@ -3,6 +3,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 5;
 }
 
 .container {
@@ -23,15 +24,26 @@
 
 }
 
+.animations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 20;
+}
+
 .menu {
-  @media screen and (max-width: 1023px) {
+    cursor: pointer;
+
+  // @media screen and (max-width: 1023px) {
     width: 13px;
     height: 50px;
-    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+  // }
 }
 
 .line {

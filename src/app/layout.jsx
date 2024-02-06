@@ -3,7 +3,7 @@ import "./globals.scss";
 import { Montserrat } from "next/font/google";
 
 import Header from "@/libs/components/header/header";
-// import Footer from "@/libs/components/Footer/Footer";
+import Footer from "@/libs/components/footer/footer";
 
 import styles from "./page.module.scss";
 
@@ -16,7 +16,7 @@ export default async function RootLayout({ children }) {
       <body className={montserrat.className}>
         <Header />
         <main className={styles.page}>{children}</main>
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

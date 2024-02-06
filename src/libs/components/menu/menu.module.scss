@@ -1,0 +1,35 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(91.41deg, rgb(99, 71, 137) 1.38%, rgb(75, 59, 107));
+  padding: 44px 28px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.closed {
+  margin-left: auto;
+}
+
+.list {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.item {
+  width: 40px;
+    height: 40px;
+    background: rgb(249, 252, 252);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+  fill: rgb(99, 71, 137);
+  font-size: 24px;
+}

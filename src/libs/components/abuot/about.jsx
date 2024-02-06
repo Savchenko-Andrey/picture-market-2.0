@@ -10,7 +10,7 @@ export default function About() {
       <div className={styles.background}>
         <Image
           src={backgroundMob}
-          alt="pay"
+          alt="image"
           fill
           priority={true}
           loading="eager"

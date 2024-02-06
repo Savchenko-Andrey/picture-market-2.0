@@ -1,3 +1,4 @@
+import Button from "@/libs/components/button/button"
 import styles from "./hero.module.scss"
 
 export default function Hero() {
@@ -18,7 +19,7 @@ export default function Hero() {
             <span>from your photo </span>
           </h2>
         </div>
-        <button className={styles.btn}>Buy for £ 69</button>
+        <Button text={"Buy for £ 69"}/>
       </div>
     </section>
   )

@@ -6,6 +6,7 @@ import cardFoto from "@/assets/card_photo.png"
 import cardFotoTel from "@/assets/card_photo_mobile.png"
 import cardPhotoBackground from "@/assets/card_photo_background_comp.png"
 import cardPhotoForm from "@/assets/card_photo_form.png"
+import Button from "@/libs/components/button/button";
 
 export default function Cards() {
   return (
@@ -78,8 +79,7 @@ export default function Cards() {
             <li className={styles.item}></li>
           </ul>
         </div>
-
-          <button className={styles.btn}>Buy for £ 69</button>
+        <Button text={"Buy for £ 69"}/>
       </div>
     </section>
   )
