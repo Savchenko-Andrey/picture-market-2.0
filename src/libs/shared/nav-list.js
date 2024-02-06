@@ -16,3 +16,18 @@ export const List = [
     id: "Gallery",
   },
 ];
+
+export const Page = [
+  {
+    title: "About Us",
+    id: "About Us",
+  },
+  {
+    title: "Gallery",
+    id: "Gallery",
+  },
+  {
+    title: "Order",
+    id: "Order",
+  },
+];

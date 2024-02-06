@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./header.module.scss";
 import logo from "@/assets/logo-black.png"
 import Menu from "../menu/menu";
-
+import {Page} from '@/libs/shared/nav-list'
 
 export default function Header() {
   const [isMenu, setMenu] = useState(false);
@@ -47,7 +47,14 @@ export default function Header() {
             />
           </div>
           <div className={styles.nav}>
-            
+            <ul className={styles.nav_list}>
+              {Page.map(({ title, id }) => (
+                <li key={id} >
+                  <p className={styles.item}>{title}</p>
+                </li>
+                ))}
+            </ul>
+            <span className={styles.item_line}></span>
           </div>
           <div className={styles.menu} onClick={stateMenu}>
             <span className={styles.line}></span>

@@ -6,10 +6,15 @@ export default function Hero() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.container_title}>
-          <h1 className={styles.title}>PERSONALIS
-            <span className={styles.title_color_black}>ed</span>
-            <span className={styles.title_color_fiolet}>string</span>
-            <span className={styles.title_color_white}>art</span>
+          <h1 className={styles.title}>
+            <span>
+              <span>PERSONALIS</span>
+              <span className={styles.title_color_black}>ed</span>
+            </span>
+            <span>
+              <span className={styles.title_color_fiolet}>string</span>
+              <span className={styles.title_color_white}>art</span>
+            </span>
           </h1>
         </div>
         <div className={styles.description_container}>

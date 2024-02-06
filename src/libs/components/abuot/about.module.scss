@@ -3,6 +3,16 @@
   height: 530px;
   position: relative;
   margin-top: 50px;
+
+  @media screen and (min-width: 480px) {
+    height: 530px;
+  }
+  @media screen and (min-width: 768px) {
+    height: 680px;
+  }
+  @media screen and (min-width: 1440px) {
+    height: 880px;
+  }
 }
 
 .background_color {
@@ -14,16 +24,30 @@
 }
 
 .background {
-  // width: 100%;
-  z-index: 1;
+
 }
 
-.img {
-  max-width: 320px;
-  height: 530px;
-  left: 10px;
-  object-fit: cover;
-  object-position: left;
+.img_mob {
+  display: none;
+  @media screen and (max-width: 479px) {
+    max-width: 320px;
+    height: 530px;
+    left: 10px;
+    object-fit: cover;
+    object-position: left;
+    display: block;
+  }
+}
+
+.img_tab {
+  display: none;
+  @media screen and (min-width: 480px) {
+    display: block;
+    height: 530px;
+    left: 10px;
+    object-fit: cover;
+    object-position: left;
+  }
 }
 
 .container {
@@ -43,6 +67,18 @@
   top: 256px;
   left: -36px;
   z-index: 3;
+
+  @media screen and (min-width: 480px) {
+    rotate: 0deg;
+    top: 100px;
+    right: 200px;
+  }
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
 }
 
 .title {
@@ -51,6 +87,16 @@
   font-weight: 400;
   text-transform: uppercase;
   font-family: "Morgrach", sans-serif;
+
+  @media screen and (min-width: 480px) {
+    font-size: 28px;
+    }
+  
+    @media screen and (min-width: 768px) {
+    }
+  
+    @media screen and (min-width: 1440px) {
+    }
 }
 
 .text {
@@ -63,4 +109,13 @@
   line-height: 19px;
   color: rgb(255, 255, 255);
   margin-left: auto;
+
+  @media screen and (min-width: 480px) {
+    }
+  
+    @media screen and (min-width: 768px) {
+    }
+  
+    @media screen and (min-width: 1440px) {
+    }
 }

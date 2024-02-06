@@ -2,6 +2,8 @@ import Image from "next/image";
 
 import styles from "./about.module.scss"
 import backgroundMob from "@/assets/about_girl_mob.png"
+import backgroundTab from "@/assets/about_tab.png"
+
 
 export default function About() {
   return (
@@ -14,7 +16,15 @@ export default function About() {
           fill
           priority={true}
           loading="eager"
-          className={styles.img}
+          className={styles.img_mob}
+        />
+        <Image
+          src={backgroundTab}
+          alt="image"
+          fill
+          priority={true}
+          loading="eager"
+          className={styles.img_tab}
         />
       </div>
       <div className={styles.container}>

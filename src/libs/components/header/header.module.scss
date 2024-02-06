@@ -12,16 +12,79 @@
   padding-right: 33px;
   display: flex;
   justify-content: space-between;
+  position: relative;
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding-top: 34px;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin: 0px auto;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 1024px;
+      padding-top: 38px;
+      padding-left: 80px;
+      padding-right: 80px;
+      align-items: center;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
+    padding-top: 58px;
+    padding-left: 110px;
+    padding-right: 110px;
+  }
 }
 
 .logo {
   position: relative;
   width: 100px;
   height: 74px;
+  @media screen and (min-width: 1024px) {
+    width: 127px;
+    height: 94px;
+  }
 }
 
 .nav {
+  display: block;
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
+}
 
+.nav_list {
+  display: flex;
+  gap: 80px;
+}
+
+.item {
+  color: rgb(25, 51, 76);
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.item_line {
+  position: absolute;
+  width: 68px;
+  height: 3px;
+  background: rgb(99, 71, 137);
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
+  @media screen and (min-width: 1024px) {
+    display: block;
+    right: 74px;
+    top: 99px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    display: block;
+    right: 104px;
+    top: 118px;
+  }
 }
 
 .animations {
@@ -35,15 +98,15 @@
 }
 
 .menu {
-    cursor: pointer;
-
-  // @media screen and (max-width: 1023px) {
+    display: none;
+  @media screen and (max-width: 1023px) {
     width: 13px;
     height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  // }
+    cursor: pointer;
+  }
 }
 
 .line {
