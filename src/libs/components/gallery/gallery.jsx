@@ -53,6 +53,7 @@ export default function Gallery() {
   return (
     <>
     <div className={styles.tel}>
+      <p className={styles.title}>Enjoy Gallery</p>
       <Slider
         index={index}
         onSlide={setIndex}

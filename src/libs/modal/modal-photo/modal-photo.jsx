@@ -4,7 +4,6 @@ import Image from "next/image";
 
 import styles from "./modal-photo.module.scss";
 import img from './Img/chooseImg.png'
-import Button from "@/libs/components/button/button";
 
 export default function UploadPhoto({setIsModal}) { 
   const [imageUrl, setImageUrl] = useState(img);
@@ -119,7 +118,9 @@ export default function UploadPhoto({setIsModal}) {
           
           {imageUrl === img ?
             <div onClick={handleButtonClick}>
-              <Button text={"choose image"} />
+              {/* <Button text={"choose image"} />
+               */}
+                <div className={styles.mask}>Buy for  £ 69</div>
             </div>
             :
             <div className={styles.container_btn}>

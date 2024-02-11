@@ -10,7 +10,7 @@
   justify-content: center;
   -webkit-box-align: center;
   align-items: center;
-  z-index: 10;
+  z-index: 20;
 }
 
 .modal {
@@ -43,6 +43,7 @@
   width: 40px;
   height: 40px;
   margin-left: auto;
+  cursor: pointer;
 }
 
 .container_content {
@@ -110,6 +111,19 @@
     right: 33px;
     top: 116px;
     background-color:transparent;
+  }
+  &:hover {
+    background-color: rgb(249, 252, 252);
+    border: 1px solid rgb(0, 48, 49);
+    color: rgb(99, 71, 137);
+  }
+}
+
+.update .svg {
+  &:hover {
+    background-color: rgb(249, 252, 252);
+    border: 1px solid rgb(0, 48, 49);
+    color: rgb(99, 71, 137);
   }
 }
 
@@ -313,4 +327,9 @@
   filter: drop-shadow(rgba(177, 27, 13, 0.1) 3px 8px 20px);
   cursor: pointer;
   transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  &:hover {
+    background-color: rgb(249, 252, 252);
+    border: 1px solid rgb(0, 48, 49);
+    color: rgb(99, 71, 137);
+  }
 }
