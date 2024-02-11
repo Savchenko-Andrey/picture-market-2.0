@@ -6,6 +6,10 @@ import cardFoto from "@/assets/card_photo.png"
 import cardFotoTel from "@/assets/card_photo_mobile.png"
 import cardPhotoBackground from "@/assets/card_photo_background_comp.png"
 import cardPhotoForm from "@/assets/card_photo_form.png"
+import cardPhotoCard from "@/assets/card_photo_card.png"
+
+import cardPhotoBackgroundTwo from "@/assets/card_photo_background.png"
+
 import Button from "@/libs/components/button/button";
 
 export default function Cards() {
@@ -75,11 +79,41 @@ export default function Cards() {
                 </div>
               </div>
             </li>
-            <li className={styles.item}></li>
-            <li className={styles.item}></li>
+            <li className={styles.item}>
+              <div className={styles.item_padding}>
+                <p className={styles.item_text} style={{ width: "134px" }}>Make payment</p>
+                <p className={styles.item_text_after}>Make a payment, and our assistant can contact you to approve the layout before we start creating your string art portrait.</p>
+                <div >
+                    <Image
+                      src={cardPhotoCard}
+                      alt="image"
+                      priority={true}
+                      loading="eager"
+                      quality={100}
+                      style={{marginLeft: "auto"}}
+                  />
+                </div>
+              </div>
+            </li>
+            <li className={styles.item}>
+              <div className={styles.gradient}>
+                <div className={styles.item_padding}>
+                  <p className={styles.item_text_two} style={{width: "144px"}}>Wait for delivery</p>
+                  <p className={styles.item_text_after} style={{width: "140px"}}>Production typically takes around 2 days, and we offer free delivery throughout the UK. We also offer worldwide shipping for an additional fee.</p>
+                </div>
+              </div>
+              <Image
+                src={cardPhotoBackgroundTwo}
+                alt="image"
+                priority={true}
+                loading="eager"
+                quality={100}
+                style={{objectFit: "cover", height: "100%"}}
+              />
+            </li>
           </ul>
         </div>
-        <Button text={"Buy for £ 69"}/>
+        <Button text={"Buy for £ 69"} />
       </div>
     </section>
   )

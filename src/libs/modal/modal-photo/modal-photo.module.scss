@@ -1,0 +1,316 @@
+.container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(3, 15, 15, 0.9);
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal {
+  position: relative;
+  background-color: rgb(249, 252, 252);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    width: 312px;
+    padding-top: 20px;
+    padding-right: 23px;
+    padding-left: 23px;
+    padding-bottom: 40px;
+  }
+
+  @media (min-width: 768px) {
+    width: 583px;
+    padding-top: 42px;
+    padding-right: 54px;
+    padding-left: 54px;
+    padding-bottom: 72px;
+  }
+}
+
+.closed {
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+}
+
+.container_content {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: "Morgrach", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: rgb(0, 48, 49);
+  text-align: center;
+  margin-bottom: 40px;
+  @media screen and (min-width: 768px) {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+.photo {
+  position: relative;
+  width: 252px;
+  height: 184px;
+  object-fit: contain;
+  margin-bottom: 150px;
+
+  @media (min-width: 767px) {
+    width: 350px;
+    height: 254px;
+  }
+}
+
+.img {
+  cursor: pointer;
+  width: 252px;
+  height: 184px;
+  object-fit: contain;
+  @media (min-width: 767px) {
+    width: 350px;
+    height: 254px;
+  }
+}
+
+.container_btn {
+  display: flex;
+  gap: 10px;
+}
+
+.update {
+  width: 44px;
+  height: 44px;
+  background-color: rgb(99, 71, 137);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    position: absolute;
+    right: 33px;
+    top: 116px;
+    background-color:transparent;
+  }
+}
+
+.svg {
+  color: #634789;
+  @media (min-width: 768px) {
+    color: #fff;
+  }
+}
+
+.policy {
+  position: absolute;
+  bottom: 130px;
+  margin-bottom: 15px;
+}
+
+.container_label {
+  display: flex;
+  width: 320px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  @media (min-width: 320px) and (max-width: 767px) {
+    width: 286px;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+  position: relative;
+  color: rgb(0, 48, 49);
+  font-family: "Morgrach", sans-serif;
+} 
+
+.label_color {
+  color: #634789;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: "Morgrach", sans-serif;
+  font-size: 18px;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Стилізуємо кастомний чекбокс */
+.input+label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #634789;
+  background-color: #fff;
+  border-radius: 3px;
+  margin-top: 2px;
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    height: 15px;
+    width: 15px;
+  }
+
+  @media (min-width: 768px) {
+    height: 18px;
+    width: 18px;
+  }
+}
+
+/* Стилізуємо галочку */
+.input+label::before {
+  content: '';
+  position: absolute;
+  display: none;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    left: 4px;
+    top: 0px;
+  }
+
+  @media (min-width: 768px) {
+    left: 5px;
+    top: 2px;
+  }
+}
+
+
+/* Показуємо галочку при виборі */
+.input:checked~.checkmark:after {
+  display: block;
+}
+
+.input:checked::before{
+  background-color: #634789;
+}
+
+// ////////////////////
+
+.form_group {
+  display: block;
+}
+
+.form_group input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.form_group label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #634789;
+    background-color: #fff;
+    border-radius: 3px;
+    margin-top: 2px;
+  cursor: pointer;
+  
+    @media (min-width: 320px) and (max-width: 767px) {
+      height: 15px;
+      width: 15px;
+    }
+  
+    @media (min-width: 768px) {
+      height: 18px;
+      width: 18px;
+    }
+}
+
+.form_group label:before {
+  content: '';
+  background-color: #634789;
+}
+
+.form_group input:checked+label:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #634789;
+}
+
+.error {
+  position: absolute;
+  top: 332px;
+  font-family: "Morgrach", sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: center;
+  color: red;
+
+  @media (min-width: 768px) {
+    top: 450px;
+  }
+}
+
+.svg_checked {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 17px;
+  height: 17px;
+  @media (min-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.mask {
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: 300px;
+  padding: 10px 0px 10px;
+  border-radius: 8px;
+  font-family: "Morgrach", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  outline: none;
+  border: 1px solid white;
+  color: rgb(249, 252, 252);
+  background-color: rgb(99, 71, 137);
+  filter: drop-shadow(rgba(177, 27, 13, 0.1) 3px 8px 20px);
+  cursor: pointer;
+  transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+}
