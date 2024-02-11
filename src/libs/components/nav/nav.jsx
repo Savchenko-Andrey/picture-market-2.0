@@ -1,5 +1,5 @@
 import styles from './nav.module.scss'
-import { List } from '@/libs/shared/nav-list'
+import { List } from '@/libs/shared/nav-list';
 
 export default function Nav() {
   

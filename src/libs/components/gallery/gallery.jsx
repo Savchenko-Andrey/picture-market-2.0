@@ -1,0 +1,146 @@
+"use client"
+import Image from 'next/image';
+import { useState } from "react";
+import Slider from "slick-slider-react"
+
+import styles from './gallery.module.scss'
+
+// imagesTel
+import photoFirst from '@/assets/img-gallery/gallery1.jpg';
+import photoSecond from '@/assets/img-gallery/gallery3.jpg';
+import photoThird from '@/assets/img-gallery/gallery2.jpg';
+import photoFourth from '@/assets/img-gallery/gallery14.jpeg';
+import photoFift from '@/assets/img-gallery/gallery5.jpg';
+
+
+// imagesTabDesk
+import photoFirstDesk from '@/assets/img-gallery-desk/gallery1.jpeg';
+import photoSecondDesk from '@/assets/img-gallery-desk/gallery2.jpeg';
+import photoThirdDesk from '@/assets/img-gallery-desk/gallery3.jpeg';
+import photoFourthDesk from '@/assets/img-gallery-desk/gallery4.jpg';
+import photoFiftDesk from '@/assets/img-gallery-desk/gallery5.jpeg';
+
+const imagesTel = [photoFift, photoFirst, photoFourth, photoSecond, photoThird];
+
+
+const imagesDesk = [
+  photoFirstDesk,
+  photoSecondDesk,
+  photoThirdDesk,
+  photoFourthDesk,
+  photoFiftDesk,
+];
+
+export default function Gallery() { 
+  const [index, setIndex] = useState(1);
+
+  const arrowNext = () => {
+    if(index === 4) {
+      setIndex(0);
+    } else {
+      setIndex(index + 1)
+      }
+  }
+
+  const arrowPrrev = () => {
+    if(index === 0) {
+      setIndex(4);
+    } else {
+      setIndex(index - 1)
+      }
+  }
+
+  return (
+    <>
+    <div className={styles.tel}>
+      <Slider
+        index={index}
+        onSlide={setIndex}
+        snapOutbound={true}
+        draggable={true}
+        dragCallback={true}
+        alignment={'center'}
+        snapDuration={700}
+        className={styles.container}>
+        
+        {imagesTel.map((item, i) => (
+          <div key={i}
+            className={styles.item}
+          >
+          <Image
+            src={item}
+            alt="image"
+            priority={true}
+            loading="eager"
+            quality={100}
+            style={{ objectFit: "cover", width: "288px", height: "350px"}}
+          />
+          </div>
+        ))}
+      </Slider>
+    </div>
+    <div className={styles.desc}>
+      <Slider
+        index={index}
+        onSlide={setIndex}
+        snapOutbound={true}
+        draggable={true}
+        dragCallback={true}
+        alignment={'center'}
+        snapDuration={700}
+        className={styles.container}>
+        
+        {imagesDesk.map((item, i) => (
+          <div key={i}
+            className={styles.item}
+          >
+          <Image
+            src={item}
+            alt="image"
+            priority={true}
+            loading="eager"
+            quality={100}
+            style={{ objectFit: "cover", width: "700px", height: "450px"}}
+          />
+          </div>
+        ))}
+      </Slider>
+    </div>
+      <div className={styles.section}>
+      <div onClick={arrowPrrev} className={styles.arr_prev}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="white" d="M16.62 2.99a1.25 1.25 0 0 0-1.77 0L6.54 11.3a.996.996 0 0 0 0 1.41l8.31 8.31c.49.49 1.28.49 1.77 0s.49-1.28 0-1.77L9.38 12l7.25-7.25c.48-.48.48-1.28-.01-1.76"/></svg>
+      </div>
+      <div className={styles.container_marker}>
+        <div className={styles.marker} 
+        onClick={()=> {setIndex(0)}} 
+        style={index === 0 ?{background: "rgb(99, 71, 137)"}:{}}>
+
+        </div>
+        <div className={styles.marker} 
+        onClick={()=> {setIndex(1)}} 
+        style={index === 1 ?{background: "rgb(99, 71, 137)"}:{}}>
+
+        </div>
+        <div className={styles.marker} 
+        onClick={()=> {setIndex(2)}} 
+        style={index === 2 ?{background: "rgb(99, 71, 137)"}:{}}>
+
+        </div>
+        <div className={styles.marker} 
+        onClick={()=> {setIndex(3)}} 
+        style={index === 3 ?{background: "rgb(99, 71, 137)"}:{}}>
+
+        </div>
+        <div className={styles.marker} 
+        onClick={()=> {setIndex(4)}} 
+        style={index === 4 ?{background: "rgb(99, 71, 137)"}:{}}>
+
+        </div>
+      </div>
+        <div onClick={arrowNext} className={styles.arr_next}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="white" d="M16.62 2.99a1.25 1.25 0 0 0-1.77 0L6.54 11.3a.996.996 0 0 0 0 1.41l8.31 8.31c.49.49 1.28.49 1.77 0s.49-1.28 0-1.77L9.38 12l7.25-7.25c.48-.48.48-1.28-.01-1.76"/></svg>
+      </div>
+    </div>
+    </>
+  )
+}

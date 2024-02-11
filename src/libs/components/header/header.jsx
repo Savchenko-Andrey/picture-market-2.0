@@ -7,14 +7,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./header.module.scss";
 import logo from "@/assets/logo-black.png"
 import Menu from "../menu/menu";
-import {Page} from '@/libs/shared/nav-list'
+import { Page } from '@/libs/shared/nav-list'
+
 
 export default function Header() {
   const [isMenu, setMenu] = useState(false);
+
     const [isScroll, setIsScroll] = useState(
     typeof window !== "undefined" ? window.scrollY : 0
-  );
-
+    );
+  
   const stateMenu = () => {
     setMenu(!isMenu)
   }  

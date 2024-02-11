@@ -4,12 +4,24 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
 .container {
-  width: 300px;
+  width: 90%;
   margin-bottom: 24px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: 768px) {
+    align-items: flex-end;
+  }
 }
 
 .text {
@@ -20,7 +32,18 @@
   color: rgb(0, 48, 49);
   font-style: normal;
   font-family: "Morgrach", sans-serif;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+    font-size: 28px;
+  }
+  @media screen and (min-width: 1024px) {
+    font-size: 40px;
+  }
+  @media screen and (min-width: 1440px) {
+    font-size: 48px;
+  }
 }
 
 .text_color {
