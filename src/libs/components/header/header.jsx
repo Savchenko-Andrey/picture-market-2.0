@@ -7,15 +7,20 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./header.module.scss";
 import logo from "@/assets/logo-black.png"
 import Menu from "../menu/menu";
+import UploadPhoto from "@/libs/modal/modal-photo/modal-photo"
+
 import { Page } from '@/libs/shared/nav-list'
+import ModalPost from "@/libs/modal/modal-post/modal-post";
 
 
 export default function Header() {
   const [isMenu, setMenu] = useState(false);
-
-    const [isScroll, setIsScroll] = useState(
-    typeof window !== "undefined" ? window.scrollY : 0
-    );
+  const [isModal, setIsModal] = useState(false);
+  const [isModalForm, setIsModalForm] = useState(false);
+  
+  const [isScroll, setIsScroll] = useState(
+  typeof window !== "undefined" ? window.scrollY : 0
+  );
   
   const stateMenu = () => {
     setMenu(!isMenu)
@@ -27,6 +32,16 @@ export default function Header() {
 
       document.body.style.overflow = "hidden";
       document.body.style.maxHeight = "100vh";
+    } else if (isModal) {
+      setIsScroll(window.scrollY);
+
+      document.body.style.overflow = "hidden";
+      document.body.style.maxHeight = "100vh";
+    } else if (isModalForm) {
+      setIsScroll(window.scrollY);
+
+      document.body.style.overflow = "hidden";
+      document.body.style.maxHeight = "100vh";
     }
     window.scrollTo(0, isScroll);
 
@@ -34,7 +49,7 @@ export default function Header() {
       document.body.style.overflowX = "hidden";
       document.body.style.maxHeight = "";
     };
-  }, [isMenu]);
+  }, [isMenu, isModal, isModalForm]);
 
   return (
     <>
@@ -75,10 +90,12 @@ export default function Header() {
             transition={{ ease: "easeInOut", duration: 0.7 }}
             className={styles.animations}
           >
-            <Menu setMenu={setMenu} />
+            <Menu setMenu={setMenu} setIsModal={setIsModal} setIsModalForm={setIsModalForm} />
           </motion.div>
         }
       </AnimatePresence>
+      {isModal && <UploadPhoto setIsModal={setIsModal} />}
+      {isModalForm && <ModalPost setIsModalForm={setIsModalForm} />}
     </>
   );
 }

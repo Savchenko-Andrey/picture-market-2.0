@@ -9,9 +9,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
+  width: 320px;
   height: 600px;
   padding-top: 40px;
+  @media (min-width: 768px) {
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 768px;
+    height: 450px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  @media (min-width: 1024px) {
+    width: 1024px;
+    height: 320px;
+    padding: 0px 110px;
+  }
+  @media (min-width: 1440px) {
+    width: 1440px;
+    padding: 0 212px 0 110px;
+  }
 }
 
 .container_logo {
@@ -19,6 +36,9 @@
   width: 202px;
   height: 152px;
   margin-bottom: 40px;
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+  }
 }
 
 .adress {
@@ -30,6 +50,21 @@
   margin-bottom: 30px;
   font-size: 18px;
   text-align: center;
+  @media (min-width: 768px) {
+    width: 245px;
+    text-align: left;
+    font-size: 20px;
+  }
+  @media (min-width: 1440px) {
+    font-size: 24px;
+  }
+}
+
+.adaptive_adress {
+  @media (min-width: 1440px) {
+    font-size: 20px;
+    width: 350px;
+  }
 }
 
 
@@ -39,4 +74,48 @@
   gap: 18px;
   align-items: center;
   margin-bottom: 50px;
+}
+
+.list_text {
+  display: flex;
+    flex-wrap: wrap;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+  
+    @media (min-width: 320px) and (max-width: 767px) {
+      // gap: 5px;
+      width: 300px;
+    }
+  
+    @media (min-width: 768px) and (max-width: 1023px) {
+      width: 300px;
+    }
+  
+    @media (min-width: 1024px) and (max-width: 1439px) {
+      width: 300px;
+    }
+  
+    @media (min-width: 1440px) {
+      gap:50px;
+      width: 400px;
+    }
+}
+
+.item {
+  margin-right: 22px;
+}
+
+.link {
+  line-height: 1.33;
+  color: rgb(249, 252, 252);
+  font-family: "Morgrach", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.img_payment {
+  width: 90px;
+  height: 30px;
 }

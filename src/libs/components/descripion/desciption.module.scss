@@ -11,6 +11,14 @@
     padding-left: 40px;
     padding-right: 40px;
   }
+  @media screen and (min-width: 1024px) {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  @media screen and (min-width: 1440px) {
+    padding-left: 110px;
+    padding-right: 110px;
+  }
 }
 
 .container {
@@ -21,6 +29,9 @@
   align-items: center;
   @media screen and (min-width: 768px) {
     align-items: flex-end;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 100%;
   }
 }
 

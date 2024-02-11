@@ -49,6 +49,19 @@
   gap: 30px;
 }
 
+.title {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: rgb(0, 48, 49);
+  font-style: normal;
+  font-family: "Morgrach", sans-serif;
+}
+
 .item {
   position: relative;
   border: 4px solid rgb(99, 71, 137);
