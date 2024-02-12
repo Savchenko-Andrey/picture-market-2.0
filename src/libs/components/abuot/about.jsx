@@ -14,16 +14,18 @@ export default function About() {
           src={backgroundMob}
           alt="image"
           fill
-          priority={true}
+          priority={false}
           loading="eager"
+          quality={80}
           className={styles.img_mob}
         />
         <Image
           src={backgroundTab}
           alt="image"
           fill
-          priority={true}
+          priority={false}
           loading="eager"
+          quality={80}
           className={styles.img_tab}
         />
       </div>

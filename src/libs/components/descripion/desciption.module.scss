@@ -8,14 +8,17 @@
   padding-left: 10px;
 
   @media screen and (min-width: 768px) {
+    width: 768px;
     padding-left: 40px;
     padding-right: 40px;
   }
   @media screen and (min-width: 1024px) {
+    width: 1024px;
     padding-left: 80px;
     padding-right: 80px;
   }
   @media screen and (min-width: 1440px) {
+    width: 1440px;
     padding-left: 110px;
     padding-right: 110px;
   }
