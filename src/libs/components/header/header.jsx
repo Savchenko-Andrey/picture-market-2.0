@@ -9,9 +9,7 @@ import logo from "@/assets/logo-black.png"
 import Menu from "../menu/menu";
 import UploadPhoto from "@/libs/modal/modal-photo/modal-photo"
 
-import { Page } from '@/libs/shared/nav-list'
 import ModalPost from "@/libs/modal/modal-post/modal-post";
-
 
 export default function Header() {
   const [isMenu, setMenu] = useState(false);
@@ -21,10 +19,7 @@ export default function Header() {
   const [isScroll, setIsScroll] = useState(
   typeof window !== "undefined" ? window.scrollY : 0
   );
-  
-  const stateMenu = () => {
-    setMenu(!isMenu)
-  }  
+
 
   useEffect(() => {
     if (isMenu) {
@@ -65,15 +60,19 @@ export default function Header() {
           </div>
           <div className={styles.nav}>
             <ul className={styles.nav_list}>
-              {Page.map(({ title, id }) => (
-                <li key={id} >
-                  <p className={styles.item}>{title}</p>
-                </li>
-                ))}
+              <li>
+                <a href="#about" className={styles.item}>About Us</a>
+              </li>
+              <li>
+                <a href="#gallery" className={styles.item}>Gallery</a>
+              </li>
+              <li>
+                <p className={styles.item} onClick={()=> setIsModalForm(true)}>Order</p>
+              </li>
             </ul>
             <span className={styles.item_line}></span>
           </div>
-          <div className={styles.menu} onClick={stateMenu}>
+          <div className={styles.menu} onClick={()=> setMenu(true)}>
             <span className={styles.line}></span>
             <span className={styles.line}></span>
           </div>

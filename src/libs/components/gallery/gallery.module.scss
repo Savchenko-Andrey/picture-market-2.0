@@ -60,6 +60,13 @@
   color: rgb(0, 48, 49);
   font-style: normal;
   font-family: "Morgrach", sans-serif;
+
+  @media (min-width: 1024px) {
+    width: 400px;
+    font-size: 48px;
+    line-height: 58px;
+    margin-bottom: 52px;
+  }
 }
 
 .item {

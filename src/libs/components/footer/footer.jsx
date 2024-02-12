@@ -7,13 +7,25 @@ import logoWhite from '@/assets/logo-white.png'
 import ModalPost from "@/libs/modal/modal-post/modal-post";
 
 import payment from '@/assets/payment.png'
+import Imprint from "../imprint/imprint";
+import Privacy from "../privacy/privacy";
+import PaymentPolicy from "../payment/payment";
 
 
-export default function Description() {
+export default function Footer() {
   const [isModalForm, setIsModalForm] = useState(false);
   const [isScroll, setIsScroll] = useState(
   typeof window !== "undefined" ? window.scrollY : 0
   );
+
+  // imprint
+  const [isModalImprint, setIsModalImprint] = useState(false);
+
+  //privacy
+  const [isModalPrivacy, setIsModalPrivacy] = useState(false);
+  
+  //payment
+  const [isModalPayment, setIsModalPayment] = useState(false);
 
   useEffect(() => {
     if (isModalForm) {
@@ -21,14 +33,32 @@ export default function Description() {
 
       document.body.style.overflow = "hidden";
       document.body.style.maxHeight = "100vh";
-    } 
+    }
+    else if (isModalImprint) {
+      setIsScroll(window.scrollY);
+
+      document.body.style.overflow = "hidden";
+      document.body.style.maxHeight = "100vh";
+    }
+    else if (isModalPrivacy) {
+      setIsScroll(window.scrollY);
+
+      document.body.style.overflow = "hidden";
+      document.body.style.maxHeight = "100vh";
+    }
+    else if (isModalPayment) {
+      setIsScroll(window.scrollY);
+
+      document.body.style.overflow = "hidden";
+      document.body.style.maxHeight = "100vh";
+    }
     window.scrollTo(0, isScroll);
 
     return () => {
       document.body.style.overflowX = "hidden";
       document.body.style.maxHeight = "";
     };
-  }, [isModalForm]);
+  }, [isModalForm, isModalImprint, isModalPrivacy, isModalPayment]);
 
   return (
   <>
@@ -55,14 +85,14 @@ export default function Description() {
               </li>
             </ul>
             <ul className={styles.list_text}>
-              <li className={styles.item}>
+              <li className={styles.item} onClick={()=> setIsModalImprint(true)}>
                 <p className={styles.link}>Terms and Conditions</p>
               </li>
               <li className={styles.item}>
-                <p className={styles.link}>Privacy Policy</p>
+                <p className={styles.link} onClick={()=> setIsModalPrivacy(true)}>Privacy Policy</p>
               </li>
               <li className={styles.item}>
-                <p className={styles.link}>Payment Policy</p>
+                <p className={styles.link} onClick={()=> setIsModalPayment(true)}>Payment Policy</p>
               </li>
               <li className={styles.item}>
                 <div className={styles.img_payment}>
@@ -78,7 +108,10 @@ export default function Description() {
           </div>
         </div>
     </section>
-    {isModalForm && <ModalPost setIsModalForm={setIsModalForm} />}
+      {isModalForm && <ModalPost setIsModalForm={setIsModalForm} />}
+      {isModalImprint && <Imprint setIsModalImprint={setIsModalImprint} />}
+      {isModalPrivacy && <Privacy setIsModalPrivacy={setIsModalPrivacy} />}
+      {isModalPayment && <PaymentPolicy setIsModalPayment={setIsModalPayment} />}
   </>
   )
 }
