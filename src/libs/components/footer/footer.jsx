@@ -7,8 +7,8 @@ import logoWhite from '@/assets/logo-white.png'
 import ModalPost from "@/libs/modal/modal-post/modal-post";
 
 import payment from '@/assets/payment.png'
-import Imprint from "../imprint/Imprint";
-import Privacy from "../privacy/Privacy";
+import Imprint from "../imprint/imprint";
+import Privacy from "../privacy/privacy";
 import PaymentPolicy from "../payment/payment";
 
 
