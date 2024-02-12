@@ -71,9 +71,9 @@ export default function Gallery() {
           <Image
             src={item}
             alt="image"
-            priority={true}
+            priority={false}
             loading="eager"
-            quality={100}
+            quality={80}
             style={{ objectFit: "cover", width: "288px", height: "350px"}}
           />
           </div>
@@ -99,9 +99,9 @@ export default function Gallery() {
           <Image
             src={item}
             alt="image"
-            priority={true}
+            priority={false}
             loading="eager"
-            quality={100}
+            quality={80}
             style={{ objectFit: "cover", width: "700px", height: "450px"}}
           />
           </div>
