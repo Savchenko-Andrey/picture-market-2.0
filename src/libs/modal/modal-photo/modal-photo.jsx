@@ -1,6 +1,8 @@
 "use client"
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Imprint from "@/libs/components/imprint/imprint";
+import Privacy from "@/libs/components/privacy/privacy";
 
 import styles from "./modal-photo.module.scss";
 import img from './Img/chooseImg.png'
@@ -9,8 +11,8 @@ export default function UploadPhoto({setIsModal}) {
   const [imageUrl, setImageUrl] = useState(img);
   const [file, setFile] = useState(null);
 
-  const [isOpenPrivacy, setIsOpenPrivacy] = useState(false);
-  const [isOpenImprint, setIsOpenImprint] = useState(false);
+  const [isModalPrivacy, setIsModalPrivacy] = useState(false);
+  const [isModalImprint, setIsModalImprint] = useState(false);
 
   const [isChecked, setisChecked] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -105,11 +107,11 @@ export default function UploadPhoto({setIsModal}) {
               <label htmlFor="check" className={styles.label} style={{ paddingLeft: "30px" }}>
                 I am agree to the
               </label>
-              <p className={styles.label_color} style={{ marginLeft: "5px" }}>
+              <p className={styles.label_color} style={{ marginLeft: "5px" }} onClick={()=> setIsModalPrivacy(true)}>
                 Privacy Policy
               </p>
               <span style={{ marginLeft: "5px" }} className={styles.label}> and </span>
-              <p className={styles.label_color} style={{ marginLeft: "30px" }}>
+              <p className={styles.label_color} style={{ marginLeft: "30px" }} onClick={()=> setIsModalImprint(true) }>
                 Terms and Conditions
               </p>
             </div>
@@ -118,22 +120,18 @@ export default function UploadPhoto({setIsModal}) {
           
           {imageUrl === img ?
             <div onClick={handleButtonClick}>
-              {/* <Button text={"choose image"} />
-               */}
-                <div className={styles.mask}>Buy for  £ 69</div>
+                <div className={styles.mask}>choose image</div>
             </div>
             :
             <div className={styles.container_btn}>
-              {/* перезагрузить фото */}
               <div className={styles.update} onClick={handleButtonClick}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 2048 2048">
                     <path className={styles.svg} fill="currentColor" d="M1024 0q141 0 272 36t245 103t207 160t160 208t103 245t37 272q0 141-36 272t-103 245t-160 207t-208 160t-245 103t-272 37q-172 0-330-55t-289-154t-226-238t-141-304l123-34q40 145 123 265t198 208t253 135t289 49q123 0 237-32t214-90t182-141t140-181t91-214t32-238q0-123-32-237t-90-214t-141-182t-181-140t-214-91t-238-32q-129 0-251 36T546 267T355 428T215 640h297v128H0V256h128v274q67-123 163-221t212-166T752 37t272-37" />
                   </svg>
               </div>
-              {/* перейти к оплате */}
               {!isChecked ?
                 <div onClick={handleButtonError}>
-                    <div className={styles.mask}>Buy for  £ 69</div>
+                    <div className={styles.mask}>Buy for  £ 99</div>
                 </div>
                 :
                 <div>
@@ -149,6 +147,9 @@ export default function UploadPhoto({setIsModal}) {
           </div>
         </div>
       </div>
+      {isModalImprint && <Imprint setIsModalImprint={setIsModalImprint} />}
+      {isModalPrivacy && <Privacy setIsModalPrivacy={setIsModalPrivacy} />}
+
     </>
   )
 }

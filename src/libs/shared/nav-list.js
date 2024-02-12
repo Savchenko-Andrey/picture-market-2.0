@@ -1,33 +1,37 @@
 export const List = [
   {
     title: "Home",
-    id: "Home",
+    id: "/",
   },
   {
     title: "About Us",
-    id: "About Us",
+    id: "#about",
+    href: "#about",
   },
   {
     title: "Order",
-    id: "Order",
+    id: "",
   },
   {
     title: "Gallery",
-    id: "Gallery",
+    id: "",
+    href: "#gallary",
   },
 ];
 
 export const Page = [
   {
     title: "About Us",
-    id: "About Us",
+    id: "#about",
+    href: "#about",
   },
   {
     title: "Gallery",
-    id: "Gallery",
+    id: "",
+    href: "#gallary",
   },
   {
     title: "Order",
-    id: "Order",
+    id: "",
   },
 ];

@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import Slider from "slick-slider-react"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import UploadPhoto from "@/libs/modal/modal-photo/modal-photo"
 
@@ -20,6 +20,26 @@ import Button from "@/libs/components/button/button";
 export default function Cards() {
   const [index, setIndex] = useState(0);
   const [isModal, setIsModal] = useState(false);
+
+  const [isScroll, setIsScroll] = useState(
+  typeof window !== "undefined" ? window.scrollY : 0
+  );
+
+
+  useEffect(() => {
+    if (isModal) {
+      setIsScroll(window.scrollY);
+
+      document.body.style.overflow = "hidden";
+      document.body.style.maxHeight = "100vh";
+    } 
+    window.scrollTo(0, isScroll);
+
+    return () => {
+      document.body.style.overflowX = "hidden";
+      document.body.style.maxHeight = "";
+    };
+  }, [isModal]);
 
   const arrowNext = () => {
     if(index === 3) {
@@ -120,6 +140,7 @@ export default function Cards() {
                   <div className={styles.item_padding}>
                     <p className={styles.item_text} style={{ width: "134px" }}>Make payment</p>
                     <p className={styles.item_text_after}>Make a payment, and our assistant can contact you to approve the layout before we start creating your string art portrait.</p>
+                    {/* <p>If you are not 100% satisfied with your portrait, we are happy to issue a refund.</p> */}
                     <div >
                         <Image
                           src={cardPhotoCard}
@@ -176,14 +197,14 @@ export default function Cards() {
                             priority={true}
                             loading="eager"
                             quality={100}
-                          style={{ marginLeft: "auto", width: "180px", height: "178px" }}
+                            style={{ marginLeft: "auto", width: "180px", height: "178px" }}
                           />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              <svg className={styles.icon} stroke="currentColor" fill="rgb(0, 48, 49)" stroke-width="0" viewBox="0 0 24 24" height="50px" width="50px" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M6.41 6L5 7.41 9.58 12 5 16.59 6.41 18l6-6z"></path><path d="M13 6l-1.41 1.41L16.17 12l-4.58 4.59L13 18l6-6z"></path></svg>
+              <svg className={styles.icon} stroke="currentColor" fill="rgb(0, 48, 49)" strokeWidth="0" viewBox="0 0 24 24" height="50px" width="50px" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M6.41 6L5 7.41 9.58 12 5 16.59 6.41 18l6-6z"></path><path d="M13 6l-1.41 1.41L16.17 12l-4.58 4.59L13 18l6-6z"></path></svg>
             </div>
             <div className={styles.item_desc}>
             
@@ -200,28 +221,28 @@ export default function Cards() {
                     <div className={styles.background}>
                       <div className={styles.item_padding}>
                         <p className={styles.item_text_two}>Complete the form</p>
-                        <p className={styles.item_text_after}>Please leave your contact details so that our assistant can get in touch with you to approve the layout before we start creating your string art portrait.</p>
+                        <p className={styles.item_text_after_two}>Please leave your contact details so that our assistant can get in touch with you to approve the layout before we start creating your string art portrait.</p>
                       </div>
-                      <div >
+                      <div className={styles.container_img_two}>
                         <Image
                           src={cardPhotoForm}
                           alt="image"
                           priority={true}
                           loading="eager"
                           quality={100}
-                          style={{marginLeft: "auto", marginRight: "20px"}}
+                          fill
                         />
                     </div>
                   </div>
                 </div>
-                <svg className={`${styles.icon}`} stroke="currentColor"  fill="rgb(0, 48, 49)" stroke-width="0" viewBox="0 0 24 24"  height="50px" width="50px" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M6.41 6L5 7.41 9.58 12 5 16.59 6.41 18l6-6z"></path><path d="M13 6l-1.41 1.41L16.17 12l-4.58 4.59L13 18l6-6z"></path></svg>
+                <svg className={`${styles.icon}`} stroke="currentColor"  fill="rgb(0, 48, 49)" strokeWidth="0" viewBox="0 0 24 24"  height="50px" width="50px" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M6.41 6L5 7.41 9.58 12 5 16.59 6.41 18l6-6z"></path><path d="M13 6l-1.41 1.41L16.17 12l-4.58 4.59L13 18l6-6z"></path></svg>
             </div>
             <div className={styles.item_desc}>
-                <svg className={`${styles.icon} ${styles.icon_desc}`} stroke="currentColor"  fill="rgb(0, 48, 49)" stroke-width="0" viewBox="0 0 24 24"  height="50px" width="50px" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M6.41 6L5 7.41 9.58 12 5 16.59 6.41 18l6-6z"></path><path d="M13 6l-1.41 1.41L16.17 12l-4.58 4.59L13 18l6-6z"></path></svg>
+                <svg className={`${styles.icon} ${styles.icon_desc}`} stroke="currentColor"  fill="rgb(0, 48, 49)" strokeWidth="0" viewBox="0 0 24 24"  height="50px" width="50px" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M6.41 6L5 7.41 9.58 12 5 16.59 6.41 18l6-6z"></path><path d="M13 6l-1.41 1.41L16.17 12l-4.58 4.59L13 18l6-6z"></path></svg>
                 <div className={styles.item}>
                   <div className={styles.item_padding}>
                     <p className={styles.item_text} >Make payment</p>
-                    <p className={styles.item_text_after}>Make a payment, and our assistant can contact you to approve the layout before we start creating your string art portrait.</p>
+                    <p className={styles.item_text_after_tree}>Make a payment, and our assistant can contact you to approve the layout before we start creating your string art portrait.</p>
                     <div >
                         <Image
                           src={cardPhotoCard}
@@ -234,14 +255,14 @@ export default function Cards() {
                     </div>
                   </div>
                 </div>
-                <svg className={styles.icon} stroke="currentColor"  fill="rgb(0, 48, 49)" stroke-width="0" viewBox="0 0 24 24"  height="50px" width="50px" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M6.41 6L5 7.41 9.58 12 5 16.59 6.41 18l6-6z"></path><path d="M13 6l-1.41 1.41L16.17 12l-4.58 4.59L13 18l6-6z"></path></svg>
+                <svg className={styles.icon} stroke="currentColor"  fill="rgb(0, 48, 49)" strokeWidth="0" viewBox="0 0 24 24"  height="50px" width="50px" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M6.41 6L5 7.41 9.58 12 5 16.59 6.41 18l6-6z"></path><path d="M13 6l-1.41 1.41L16.17 12l-4.58 4.59L13 18l6-6z"></path></svg>
             </div>
             <div className={styles.item_desc}>
               <div className={`${styles.item} ${styles.item_desc_transform_right}`}>
                   <div className={styles.gradient}>
                     <div className={styles.item_padding}>
                       <p className={styles.item_text_two} >Wait for delivery</p>
-                      <p className={styles.item_text_after}>Production typically takes around 2 days, and we offer free delivery throughout the UK. We also offer worldwide shipping for an additional fee.</p>
+                      <p className={styles.item_text_after_four}>Production typically takes around 2 days, and we offer free delivery throughout the UK. We also offer worldwide shipping for an additional fee.</p>
                     </div>
                   </div>
                   <Image
@@ -266,7 +287,7 @@ export default function Cards() {
             </div>
             </div>
         <div className={styles.btn} onClick={() => setIsModal(true)}>
-          <Button text={"Buy for £ 69"} />
+          <Button text={"Buy for £ 99"} />
         </div>
       </div>
     </section>

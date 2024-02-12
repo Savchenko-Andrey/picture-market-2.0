@@ -64,6 +64,9 @@
   line-height: 1.35;
   font-weight: 500;
   cursor: pointer;
+  &:hover {
+      color: rgb(99, 71, 137);
+    }
 }
 
 .item_line {

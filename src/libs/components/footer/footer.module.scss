@@ -50,6 +50,7 @@
   margin-bottom: 30px;
   font-size: 18px;
   text-align: center;
+  cursor: pointer;
   @media (min-width: 768px) {
     width: 245px;
     text-align: left;
@@ -113,6 +114,10 @@
   font-size: 16px;
   font-weight: 400;
   cursor: pointer;
+
+  &:hover {
+    color: rgb(99, 71, 137);
+  }
 }
 
 .img_payment {

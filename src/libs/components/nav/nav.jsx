@@ -1,15 +1,21 @@
 import styles from './nav.module.scss'
-import { List } from '@/libs/shared/nav-list';
 
-export default function Nav() {
+export default function Nav({setMenu}) {
   
   return (
     <ul className={styles.list}>
-      {List.map(({ title, id }) => (
-        <li key={id} className={styles.item}>
-          <a href={id} className={styles.link}>{title}</a>
+      <li className={styles.item}>
+          <a className={styles.link} onClick={()=> setMenu(false)}>Home</a>
+      </li>
+        <li className={styles.item}>
+          <a href="#about" className={styles.link} onClick={()=> setMenu(false)}>About Us</a>
+      </li>
+      <li className={styles.item}>
+          <a href="#gallery" className={styles.link} onClick={()=> setMenu(false)}>Gallery</a>
+      </li>
+      <li className={styles.item}>
+          <a className={styles.link}>Order</a>
         </li>
-      ))}
     </ul>
   )
 }
