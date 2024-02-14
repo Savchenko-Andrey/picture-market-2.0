@@ -1,4 +1,128 @@
+.a{
+  padding: 0;
+  margin: 0;
+  display: block;
+  
+  
+}
+
+
 .section {
+  // position: fixed;
+  // top: 0;
+  // left: 0;
   width: 100vw;
   height: 100vh;
+  background-color: rgba(3, 15, 15, 0.9);
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
 }
+
+.container{
+  background-color: #634789;
+  width: 312px;
+  padding: 12px 12px 40px 12px;
+  border-radius: 8px;
+  @media (min-width: 768px) {
+    width: 728px;
+    padding: 54px 54px 72px 54px;
+
+    
+  }
+  
+}
+
+.container_icon{
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-bottom: 50px;
+  @media (min-width: 768px) {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 30px;
+
+  }
+
+}
+
+.icon{
+  width: 28px;
+  height: 28px;
+  @media (min-width: 768px) {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.title{
+  font-size: 20px;
+  line-height: 21px;
+  font-weight: 400;
+  text-align: center;
+  color: #F9FCFC;
+  margin-bottom: 30px;
+  font-family: "Morgrach",sans-serif;
+  @media (min-width: 768px) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+.text{
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+  text-align: center;
+  color: #F9FCFC;
+  margin-bottom: 20px;
+  font-family: "Morgrach",sans-serif;
+  @media (min-width: 768px) {
+    font-size: 21px;
+    line-height: 24px;
+  }
+  
+}
+
+.container_btn{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  @media (min-width: 768px) {
+    flex-wrap: nowrap;
+    padding-top: 40px;
+  }
+
+}
+
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #634789;
+  background-color: #F9FCFC;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 0 12px 0;
+  width: 300px;
+  height: 50px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 400;
+  outline: none;
+  font-family: "Morgrach",sans-serif;
+  transition: all 0.5s;
+  &:hover{
+  border: 1px solid #003031;
+ 
+}
+}
+
