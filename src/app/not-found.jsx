@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 
 import styles from "./page.module.scss";
+
 export default function NotFound() {
   const router = useRouter();
 
@@ -15,14 +16,13 @@ export default function NotFound() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        background: "#0F021C",
         gap: "40px",
         overflow: "hidden",
       }}
     >
-      <h1>Щось сталось (:</h1>
+      <h1>Page not found (:</h1>
       <p className={styles.error_text} onClick={() => router.push("/")}>
-        Повернутися на головну
+        Home page
       </p>
     </div>
   );
