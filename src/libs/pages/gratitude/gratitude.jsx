@@ -34,6 +34,7 @@ export default function Gratitude() {
   }, [isModal, isModalForm]);
 
   return (
+    
     <>
     <section className={styles.section}>
       <div className={styles.container}>
