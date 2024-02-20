@@ -6,36 +6,21 @@ import Slider from "slick-slider-react"
 import styles from './gallery.module.scss'
 
 // imagesTel
-import photoFirst from '@/assets/img-gallery/gallery1.jpg';
-import photoSecond from '@/assets/img-gallery/gallery3.jpg';
-import photoThird from '@/assets/img-gallery/gallery2.jpg';
-import photoFourth from '@/assets/img-gallery/gallery14.jpeg';
-import photoFift from '@/assets/img-gallery/gallery5.jpg';
+import photoFirst from '@/assets/img-gallery/gallery_one.png';
+import photoSecond from '@/assets/img-gallery/gallary_two.png';
+import photoThird from '@/assets/img-gallery/gallary_tree.png';
+import photoFourth from '@/assets/img-gallery/gallary_fo.png';
 
 
-// imagesTabDesk
-import photoFirstDesk from '@/assets/img-gallery-desk/gallery1.jpeg';
-import photoSecondDesk from '@/assets/img-gallery-desk/gallery2.jpeg';
-import photoThirdDesk from '@/assets/img-gallery-desk/gallery3.jpeg';
-import photoFourthDesk from '@/assets/img-gallery-desk/gallery4.jpg';
-import photoFiftDesk from '@/assets/img-gallery-desk/gallery5.jpeg';
-
-const imagesTel = [photoFift, photoFirst, photoFourth, photoSecond, photoThird];
+const imagesTel = [photoFirst, photoFourth, photoSecond, photoThird];
 
 
-const imagesDesk = [
-  photoFirstDesk,
-  photoSecondDesk,
-  photoThirdDesk,
-  photoFourthDesk,
-  photoFiftDesk,
-];
 
 export default function Gallery() { 
   const [index, setIndex] = useState(1);
 
   const arrowNext = () => {
-    if(index === 4) {
+    if(index === 3) {
       setIndex(0);
     } else {
       setIndex(index + 1)
@@ -44,7 +29,7 @@ export default function Gallery() {
 
   const arrowPrrev = () => {
     if(index === 0) {
-      setIndex(4);
+      setIndex(3);
     } else {
       setIndex(index - 1)
       }
@@ -92,7 +77,7 @@ export default function Gallery() {
         snapDuration={700}
         className={styles.container}>
         
-        {imagesDesk.map((item, i) => (
+        {imagesTel.map((item, i) => (
           <div key={i}
             className={styles.item}
           >
@@ -102,7 +87,7 @@ export default function Gallery() {
             priority={false}
             loading="eager"
             quality={80}
-            style={{ objectFit: "cover", width: "700px", height: "450px"}}
+            className={styles.img_desc}
           />
           </div>
         ))}
@@ -131,11 +116,6 @@ export default function Gallery() {
         <div className={styles.marker} 
         onClick={()=> {setIndex(3)}} 
         style={index === 3 ?{background: "rgb(99, 71, 137)"}:{}}>
-
-        </div>
-        <div className={styles.marker} 
-        onClick={()=> {setIndex(4)}} 
-        style={index === 4 ?{background: "rgb(99, 71, 137)"}:{}}>
 
         </div>
       </div>
