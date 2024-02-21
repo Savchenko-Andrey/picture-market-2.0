@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 import styles from "./about.module.scss"
-import backgroundMob from "@/assets/about_girl_mob.png"
-import backgroundTab from "@/assets/about_tab.png"
+import backgroundMob from "@/assets/about_girl_mob.webp"
+import backgroundTab from "@/assets/about_tab.webp"
 
 
 export default function About() {

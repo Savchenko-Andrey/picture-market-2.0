@@ -35,50 +35,6 @@
   }
 }
 
-@keyframes telContainer {
-
-  to {
-    margin-left: 48px;
-    margin-bottom: 40px;
-    width: 450px;
-  }
-}
-
-@keyframes tel {
-
-  to {
-    width: 500px;
-    height: 500px;
-    overflow: hidden;
-  }
-}
-
-@keyframes tab {
-  to {
-    margin-left: 260px;
-    margin-bottom: 20px;
-    width: 420px;
-    height: 420px;
-  }
-}
-
-@keyframes lap {
-  to {
-    margin-left: 160px;
-    margin-bottom: 20px;
-    width: 420px;
-    height: 420px;
-  }
-}
-
-@keyframes desc {
-  to {
-    margin-left: 140px;
-    margin-bottom: 40px;
-    width: 550px;
-    height: 550px;
-  }
-}
 
 .section {
   width: 100vw;
@@ -114,17 +70,42 @@
     }
 }
 
+@keyframes animations_mob {
+  0%{
+   position: absolute;
+   left: -150px;
+  }
+}
+@keyframes animations_tab {
+  0%{
+    position: absolute;
+    opacity: 0;
+    scale: 0;
+  }
+  100%{
+    opacity: 1;
+    scale: 1;
+  }
+
+}
+
 .container_title {
   max-width: 312px;
   transform: rotate(-90deg);
   position: absolute;
   top: 180px;
   left: -90px;
+  animation: animations_mob 2s 0.5s ease forwards;
+ 
+
   @media screen and (min-width: 768px) {
     top: 220px;
     left: 60px;
     transform: rotate(0deg);
     max-width: 372px;
+  animation: animations_tab 2s 0.5s ease forwards;
+
+    
   }
   @media screen and (min-width: 1024px) {
     left: 80px;
@@ -205,10 +186,15 @@
   position: absolute;
   bottom: 70px;
   left: 12px;
+  animation: animations_mob 2s 0.5s ease forwards;
+
   @media screen and (min-width: 768px) {
       left: 60px;
       transform: rotate(0deg);
+      animation: animations_tab 2s 0.5s ease forwards;
+
     }
+
   
     @media screen and (min-width: 1024px) {
       left: 80px;
@@ -283,7 +269,12 @@
 }
 
 .btn {
+  animation: animations_mob 2s 0.5s ease forwards;
+
   @media (min-width: 768px) {
     margin-right: auto;
+    animation: animations_tab 2s 0.5s ease forwards;
+    
+
   }
 }
