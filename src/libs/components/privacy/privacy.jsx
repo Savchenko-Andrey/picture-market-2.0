@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import styles from './privacy.module.scss';
 
-import logoBlack from "@/assets/logo-black.png";
+import logoBlack from "@/assets/logo-black.webp";
 import ModalPost from "@/libs/modal/modal-post/modal-post";
 
 

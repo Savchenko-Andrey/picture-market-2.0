@@ -3,10 +3,10 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 import styles from "./footer.module.scss"
-import logoWhite from '@/assets/logo-white.png'
+import logoWhite from '@/assets/logo-white.webp'
 import ModalPost from "@/libs/modal/modal-post/modal-post";
 
-import payment from '@/assets/payment.png'
+import payment from '@/assets/payment.webp'
 import Imprint from "../imprint/imprint";
 import Privacy from "../privacy/privacy";
 import PaymentPolicy from "../payment/payment";
