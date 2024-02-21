@@ -7,13 +7,13 @@ import UploadPhoto from "@/libs/modal/modal-photo/modal-photo"
 
 import styles from "./cards.module.scss"
 
-import cardFoto from "@/assets/card_photo.png"
-import cardFotoTel from "@/assets/card_photo_mobile.png"
-import cardPhotoBackground from "@/assets/card_photo_background_comp.png"
-import cardPhotoForm from "@/assets/card_photo_form.png"
-import cardPhotoCard from "@/assets/card_photo_card.png"
+import cardFoto from "@/assets/card_photo.webp"
+import cardFotoTel from "@/assets/card_photo_mobile.webp"
+import cardPhotoBackground from "@/assets/card_photo_background_comp.webp"
+import cardPhotoForm from "@/assets/card_photo_form.webp"
+import cardPhotoCard from "@/assets/card_photo_card.webp"
 
-import cardPhotoBackgroundTwo from "@/assets/card_photo_background.png"
+import cardPhotoBackgroundTwo from "@/assets/card_photo_background.webp"
 
 import Button from "@/libs/components/button/button";
 

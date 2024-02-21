@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 
 import styles from "./header.module.scss";
-import logo from "@/assets/logo-black.png"
+import logo from "@/assets/logo-black.webp"
 import Menu from "../menu/menu";
 import UploadPhoto from "@/libs/modal/modal-photo/modal-photo"
 
