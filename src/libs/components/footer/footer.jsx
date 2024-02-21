@@ -78,7 +78,7 @@ export default function Footer() {
           <div>
             <ul className={styles.list}>
               <li>
-                <a className={styles.adress} onClick={()=> setIsModalForm(true)}>Email: designer@string-world.com</a>
+                <p className={styles.adress} onClick={()=> setIsModalForm(true)}>Email: designer@string-world.com</p>
               </li>
               <li>
                 <a className={styles.adress} href="tel:+447455871180">Telephone: +447455871180</a>

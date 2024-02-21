@@ -12,7 +12,7 @@ const montserrat = Montserrat({ subsets: ["cyrillic"] });
 
 export default async function RootLayout({ children }) {
   return (
-    <html lang="en-EN">
+    <html title="String World" lang="en-EN">
       <body className={montserrat.className}>
         <Header />
         <main className={styles.page}>{children}</main>
