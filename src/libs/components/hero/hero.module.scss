@@ -7,31 +7,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  animation: telContainer 4s ease forwards;
 }
 
 .video {
   width: 416px;
   height: 416px;
-  animation: tel 4s ease forwards;
   overflow: hidden;
 
   @media (min-width: 768px) {
     width: 420px;
     height: 420px;
-    animation: tab 4s ease forwards;
     overflow: hidden;
   }
   @media (min-width: 1024px) {
     width: 500px;
     height: 500px;
-    animation: lap 4s ease forwards;
   }
   @media (min-width: 1440px) {
     width: 500px;
     height: 500px;
-    animation: desc 4s ease forwards;
   }
 }
 
@@ -72,13 +66,13 @@
 
 @keyframes animations_mob {
   0%{
-   position: absolute;
-   left: -150px;
+    position: absolute;
+    left: -150px;
   }
 }
+
 @keyframes animations_tab {
   0%{
-    position: absolute;
     opacity: 0;
     scale: 0;
   }
@@ -96,20 +90,19 @@
   top: 180px;
   left: -90px;
   animation: animations_mob 2s 0.5s ease forwards;
- 
 
   @media screen and (min-width: 768px) {
     top: 220px;
     left: 60px;
     transform: rotate(0deg);
     max-width: 372px;
-  animation: animations_tab 2s 0.5s ease forwards;
-
-    
+    animation: animations_tab 2s 0.5s ease forwards;
   }
+
   @media screen and (min-width: 1024px) {
     left: 80px;
   }
+  
   @media screen and (min-width: 1440px) {
     left: 110px;
   }
@@ -274,7 +267,5 @@
   @media (min-width: 768px) {
     margin-right: auto;
     animation: animations_tab 2s 0.5s ease forwards;
-    
-
   }
 }

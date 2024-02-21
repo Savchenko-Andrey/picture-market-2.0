@@ -1,5 +1,7 @@
 "use client"
 import { useState } from "react";
+import axios from 'axios';
+
 import styles from "./modal-post.module.scss"
 
 export default function ModalPost({setIsModalForm}) {
@@ -9,7 +11,7 @@ export default function ModalPost({setIsModalForm}) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    handleToggleForm();
+    setIsModalForm(false);
 
     if (!name || !email || !message) {
     } else {

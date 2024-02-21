@@ -15,6 +15,7 @@ export default function Header() {
   const [isMenu, setMenu] = useState(false);
   const [isModal, setIsModal] = useState(false);
   const [isModalForm, setIsModalForm] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   
   const [isScroll, setIsScroll] = useState(
   typeof window !== "undefined" ? window.scrollY : 0
@@ -46,10 +47,13 @@ export default function Header() {
     };
   }, [isMenu, isModal, isModalForm]);
 
+  useEffect(() => {
+    setIsClient(true);
+  }, [])
   return (
     <>
       <section className={styles.section}>
-        <div className={styles.container}>
+        {isClient && <div className={styles.container}>
           <div className={styles.logo}>
             <Image
               src={logo}
@@ -67,16 +71,16 @@ export default function Header() {
                 <a href="#gallery" className={styles.item}>Gallery</a>
               </li>
               <li>
-                <p className={styles.item} onClick={()=> setIsModalForm(true)}>Order</p>
+                <p className={styles.item} onClick={() => setIsModalForm(true)}>Order</p>
               </li>
             </ul>
             <span className={styles.item_line}></span>
           </div>
-          <div className={styles.menu} onClick={()=> setMenu(true)}>
+          <div className={styles.menu} onClick={() => setMenu(true)}>
             <span className={styles.line}></span>
             <span className={styles.line}></span>
           </div>
-        </div>
+        </div>}
       </section>
 
       <AnimatePresence>

@@ -169,6 +169,13 @@
   font-size: 18px;
 }
 
+.position {
+  margin-left: 5px;
+  @media (min-width: 768px) {
+    margin-left: 30px;
+  }
+}
+
 .input {
   position: absolute;
   opacity: 0;
