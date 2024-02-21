@@ -57,6 +57,14 @@ export default function Cards() {
       }
   }
 
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 700,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <>
     <section className={styles.section}>
@@ -69,6 +77,7 @@ export default function Cards() {
         <div>
           <div className={styles.tel}>
             <Slider
+              {...settings}
               index={index}
               onSlide={setIndex}
               snapOutbound={true}

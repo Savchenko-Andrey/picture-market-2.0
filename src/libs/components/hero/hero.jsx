@@ -12,6 +12,7 @@ import styles from "./hero.module.scss"
 
 export default function Hero() {
   const [isModal, setIsModal] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   const [isScroll, setIsScroll] = useState(
   typeof window !== "undefined" ? window.scrollY : 0
@@ -33,12 +34,17 @@ export default function Hero() {
     };
   }, [isModal]);
 
+
+  useEffect(() => {
+    setIsClient(true);
+  }, [])
+
   return (
     <>
       <section className={styles.section}>
         <div className={styles.container}>
           <div className={styles.container_title}>
-            <h1 className={styles.title}>
+            {isClient && <h1 className={styles.title}>
               <span>
                 <span>PERSONALIS</span>
                 <span className={styles.title_color_black}>ed</span>
@@ -47,16 +53,18 @@ export default function Hero() {
                 <span className={styles.title_color_fiolet}>string</span>
                 <span className={styles.title_color_white}>art</span>
               </span>
-            </h1>
+            </h1>}
           </div>
           <div className={styles.description_container}>
-            <h2 className={styles.description_tel}>
+            {isClient && <h2 className={styles.description_tel}>
               <span>Thread </span>
               <span>portrait created </span>
               <span>from your photo </span>
-            </h2>
-            <h2 className={styles.description_tab}>Thread portrait created from your photo</h2>
+            </h2>}
+            {isClient &&
+              <h2 className={styles.description_tab}>Thread portrait created from your photo</h2>}
           </div>
+
           <div className={styles.hero_img}> 
             <Image
               src={heroImg}
@@ -67,7 +75,7 @@ export default function Hero() {
             />
           </div> 
           <div onClick={() => setIsModal(true)} className={styles.btn}>
-            <Button text={"Buy for £ 99"} />
+            {isClient && <Button text={"Buy for £ 99"} />}
           </div>
         </div>
       </section>

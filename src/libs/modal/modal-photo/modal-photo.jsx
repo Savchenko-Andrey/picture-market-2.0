@@ -111,7 +111,7 @@ export default function UploadPhoto({setIsModal}) {
                 Privacy Policy
               </p>
               <span style={{ marginLeft: "5px" }} className={styles.label}> and </span>
-              <p className={styles.label_color} style={{ marginLeft: "30px" }} onClick={()=> setIsModalImprint(true) }>
+                <p className={`${styles.label_color} ${styles.position}`} onClick={()=> setIsModalImprint(true) }>
                 Terms and Conditions
               </p>
             </div>

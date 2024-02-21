@@ -53,6 +53,7 @@
 
 .tel {
   display: none;
+  width: 370px;
   @media (max-width: 767px) {
     display: block;
   }
@@ -80,8 +81,10 @@
 }
 
 .list {
+  margin-right: auto;
+  margin-left: auto;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     flex-wrap: wrap;
     gap: 100px;
     margin-bottom: 30px;
