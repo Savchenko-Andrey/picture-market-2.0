@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image";
 
-import heroImg from '@/assets/hero-img.png' 
+import heroImg from '@/assets/hero-img.webp' 
 
 import UploadPhoto from "@/libs/modal/modal-photo/modal-photo"
 
@@ -57,7 +57,7 @@ export default function Hero() {
             </h2>
             <h2 className={styles.description_tab}>Thread portrait created from your photo</h2>
           </div>
-          <div className={styles.hero_img}>
+          <div className={styles.hero_img}> 
             <Image
               src={heroImg}
               alt="image"
@@ -65,7 +65,7 @@ export default function Hero() {
               loading="eager"
               quality={100}
             />
-          </div>
+          </div> 
           <div onClick={() => setIsModal(true)} className={styles.btn}>
             <Button text={"Buy for £ 99"} />
           </div>
