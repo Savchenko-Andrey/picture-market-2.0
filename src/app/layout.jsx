@@ -15,6 +15,7 @@ export default async function RootLayout({ children }) {
     <html lang="en-EN">
       <head>
         <title>String World</title>
+        
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={montserrat.className}>
