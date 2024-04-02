@@ -138,6 +138,7 @@ export default function UploadPhoto({setIsModal}) {
                     <script async
                       src="https://js.stripe.com/v3/buy-button.js">
                     </script>
+
                     <stripe-buy-button
                       buy-button-id="buy_btn_1Ot9o8BvsSffaihH7GbB1oV3"
                       publishable-key="pk_live_51NTPQmBvsSffaihHutVQGNFakDGH0b8Yeqb5qgVW7X1xgge8YRucsJlxLmOVNtr0xGzlRaKk2lsT7vfSL2J2ZZ0800vVyTZ1UY"
