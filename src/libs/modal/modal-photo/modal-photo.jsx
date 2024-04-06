@@ -40,16 +40,11 @@ export default function UploadPhoto({ setIsModal }) {
   }
 
   function handleImageChange(event) {
+    event.preventDefault();
     const file = event.target.files[0];
     const reader = new FileReader();
 
     const url = URL.createObjectURL(file);
-
-    // axios.post(
-    //   "/api/send",
-    //   { img: url },
-    //   { headers: { "Content-Type": "application/json" } }
-    // );
 
     if (!window.globalState) {
       window.globalState = {};
@@ -61,7 +56,20 @@ export default function UploadPhoto({ setIsModal }) {
       setImageUrl(event.target.result);
     });
 
-    setFile(file);
+    // setFile(file);
+
+    // reader.onload = function () {
+    //   var base64data = reader.result.split(",")[1];
+    //
+    // };
+
+    const formData = new FormData();
+
+    formData.append("photo", file);
+
+    axios
+      .post("https://postapi.onrender.com/api/sendphoto", formData)
+      .then((res) => axios.post("/api/send", JSON.stringify(res.data)));
 
     reader.readAsDataURL(file);
   }
@@ -155,8 +163,7 @@ export default function UploadPhoto({ setIsModal }) {
                     Privacy Policy
                   </p>
                   <span style={{ marginLeft: "5px" }} className={styles.label}>
-                    {" "}
-                    and{" "}
+                    and
                   </span>
                   <p
                     className={`${styles.label_color} ${styles.position}`}
