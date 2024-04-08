@@ -67,9 +67,7 @@ export default function UploadPhoto({ setIsModal }) {
 
     formData.append("photo", file);
 
-    axios
-      .post("https://postapi.onrender.com/api/sendphoto", formData)
-      .then((res) => axios.post("/api/send", JSON.stringify(res.data)));
+    axios.post("https://postapi.onrender.com/api/sendphoto", formData);
 
     reader.readAsDataURL(file);
   }

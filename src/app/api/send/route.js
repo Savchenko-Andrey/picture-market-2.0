@@ -8,11 +8,7 @@ export async function POST(req, res) {
   try {
     const data = await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: [
-        "viktorhrimli101@gmail.com",
-        "designer@string-world.com",
-        "Dracxm95@gmail.com",
-      ],
+      to: ["viktorhrimli101@gmail.com", "workviktornew@gmail.com"],
       subject: "New custumer",
       html: `<img src=${url} width="300" height="250" alt="surprise mazafaka" />`,
     });
