@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { getById } from "@/libs/shared/getById";
 
 
 import styles from "./header.module.scss";
@@ -65,10 +66,10 @@ export default function Header() {
           <div className={styles.nav}>
             <ul className={styles.nav_list}>
               <li>
-                <a href="#about" className={styles.item}>About Us</a>
+                <p className={styles.item} onClick={()=> getById("about")}>About Us</p>
               </li>
               <li>
-                <a href="#gallery" className={styles.item}>Gallery</a>
+                <p className={styles.item} onClick={()=> getById("gallery")}>Gallery</p>
               </li>
               <li>
                 <p className={styles.item} onClick={() => setIsModalForm(true)}>Order</p>
